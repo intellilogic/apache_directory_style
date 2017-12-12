@@ -1,0 +1,28 @@
+* { padding:0; margin:0; box-sizing: border-box; } html { overflow-y:scroll; } table { border-collapse: collapse; }
+div#files { margin:0 10px 0 10px; } h2 { font-weight:normal; font-size:1.5em; color:#444; }
+a,a:visited { text-decoration:none; color:#111; &:hover { color:#F00; text-decoration:underline; } }
+#command { min-width:980px; height:2em; background-color:#ECF1EF; border-bottom:1px solid #CCC; margin:0 0 12px 0;
+	a { background: left center no-repeat; font-size:1.5em; padding:0 10px 0 20px; &:hover { color:#F00; }
+		color:#555555; border-right:2px dotted #D5E0E0; height:100%; &:first-child { margin:0 0 0 5px; } }
+	.parent { background-image:url('/~Config/index-style/icons/parent.gif'); } &.at_root { .parent { display:none; } }
+	.refresh { background-image:url('/~Config/index-style/icons/refresh.gif'); }
+	.root { background-image:url('/~Config/index-style/icons/home.gif'); }
+} table { font-size:1.5em; width:100%; hr { display:none; } @border:solid #666; cursor: pointer;
+	@icon:nth-child(1); @name:nth-child(2); @date:nth-child(3); @size:nth-child(4); @desc:nth-child(5);
+	tr { &:nth-child(2), &:last-of-type { display: none }
+		td, th {  padding:1px 0 1px 0; text-align:left; &:@{desc}{ display:none } }
+		th { border-bottom:2px @border;
+			/*icon*/ &:@{icon}{ width:20px; padding-right:5px; cursor: default }
+			/*name*/ &:@{name}{  }
+			/*date*/ &:@{date}{ padding:0 10px 0 0; width:220px; text-align:center; border-left:1px @border; }
+			/*size*/ &:@{size}{ width:100px; text-align:center; border-left:1px @border; } }
+		td { border-bottom:1px @border;
+			/*icon*/ &:@{icon}{  }
+			/*name*/ &:@{name}{ text-align:left; }
+			/*date*/ &:@{date}{ text-align:center; border-left:1px @border; }
+			/*size*/ &:@{size}{ text-align:right; border-left:1px @border; } }
+		th:not(:first-child), &:not(:first-child){
+			&:hover{ background-color:#EEE; color:#F00; a { color:#F00; text-decoration:underline; } } }
+	}
+} #footer { color:#999; text-align:right; margin-top:1.5em; padding:0.2em 15px 0.2em 0; width:100%; clear:both;
+	border-style:solid; border-color:#CCC; border-width:1px 0 1px 0; background-color:#F4F4F4; font-size:90%; }
